@@ -1,13 +1,13 @@
 <?php
 /**
- * This file is a part of "furqansiddiqui/ethereum-rpc" package.
- * https://github.com/furqansiddiqui/ethereum-rpc
+ * This file is a part of "uran1980/ethereum-rpc" package.
+ * https://github.com/uran1980/ethereum-rpc
  *
  * Copyright (c) 2020 Furqan A. Siddiqui <hello@furqansiddiqui.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code or visit following link:
- * https://github.com/furqansiddiqui/ethereum-rpc/blob/master/LICENSE
+ * https://github.com/uran1980/ethereum-rpc/blob/master/LICENSE
  */
 
 declare(strict_types=1);
@@ -23,7 +23,7 @@ use EthereumRPC\Validator;
  * Class Contract
  *
  * Ideally this class should be extended instead of using directly, therefore no magic methods are coded,
- * see our ERC20 token implementation for an example (https://github.com/furqansiddiqui/erc20-php)
+ * see our ERC20 token implementation for an example (https://github.com/uran1980/erc20-php)
  *
  * @package EthereumRPC\Contracts
  */

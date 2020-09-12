@@ -9,4 +9,4 @@ Ethereum (geth) RPC client
 
 ## Installation
 
-`composer require furqansiddiqui/ethereum-rpc`
+`composer require uran1980/ethereum-rpc`
