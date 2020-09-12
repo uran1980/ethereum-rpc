@@ -1,13 +1,13 @@
 <?php
 /**
- * This file is a part of "furqansiddiqui/ethereum-rpc" package.
- * https://github.com/furqansiddiqui/ethereum-rpc
+ * This file is a part of "uran1980/ethereum-rpc" package.
+ * https://github.com/uran1980/ethereum-rpc
  *
  * Copyright (c) 2020 Furqan A. Siddiqui <hello@furqansiddiqui.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code or visit following link:
- * https://github.com/furqansiddiqui/ethereum-rpc/blob/master/LICENSE
+ * https://github.com/uran1980/ethereum-rpc/blob/master/LICENSE
  */
 
 declare(strict_types=1);
@@ -51,12 +51,13 @@ class EthereumRPC
      * EthereumRPC constructor.
      * @param string $host
      * @param int|null $port
+     * @param bool $ssl
      */
-    public function __construct(string $host, ?int $port = null)
+    public function __construct(string $host, ?int $port = null, bool $ssl = false)
     {
         $this->host = $host;
         $this->port = $port;
-        $this->ssl = false;
+        $this->ssl = $ssl;
         $this->eth = new Eth($this);
         $this->personal = new Personal($this);
     }
@@ -86,18 +87,17 @@ class EthereumRPC
     }
 
     /**
-     * @param null|string $endPoint
+     * @param string $endPoint
      * @return string
      */
     private function url(?string $endPoint = null): string
     {
-        $protocol = $this->ssl ? "https" : "http";
+        $protocol = $this->ssl ? 'https' : 'http';
+        $output   = $this->port
+                  ? sprintf('%s://%s:%s%s', $protocol, $this->host, $this->port, $endPoint)
+                  : sprintf('%s://%s%s', $protocol, $this->host, $endPoint);
 
-        if ($this->port) {
-            return sprintf('%s://%s:%s%s', $protocol, $this->host, $this->port, $endPoint);
-        }
-
-        return sprintf('%s://%s%s', $protocol, $this->host, $endPoint);
+        return $output;
     }
 
     /**
