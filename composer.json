@@ -1,6 +1,7 @@
 {
-  "name": "furqansiddiqui/ethereum-rpc",
+  "name": "uran1980/ethereum-rpc",
   "type": "library",
+  "version": "0.1.5",
   "description": "Ethereum (geth) RPC client",
   "keywords": [
     "ethereum",
